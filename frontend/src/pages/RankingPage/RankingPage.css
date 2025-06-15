@@ -1,0 +1,66 @@
+.ranking-wrapper {
+  padding: 24px 194px;
+  background: #fef7ff;
+  zoom: 121%;
+}
+.season-tabs {
+  display: flex;
+  gap: 8px; 
+  margin: 16px 0;
+  justify-content: flex-start; 
+  padding-left: 0; 
+}
+
+.season-tabs button {
+  padding: 8px 14px; 
+  background: #ffe8f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  transition: all 0.2s ease;
+  font-size: 14px; 
+}
+
+.season-tabs button.active {
+  background: #ffccd8;
+  font-weight: bold;
+  transform: translateY(-2px) translateX(3px) scale(1.1);;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+
+.ranking-table-wrapper {
+  overflow-x: auto;
+  margin-top: -16px;
+  background: #fff;
+}
+.ranking-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ranking-table th, .ranking-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+}
+.ranking-table th {
+  background-color: #ff87a7;
+  color: #fff;
+}
+.tier-icon {
+  width: 24px;
+  height: 30px;
+}
+.tier-placeholder {
+  width: 24px; height: 24px;
+  background: #ccc; border-radius: 50%;
+  margin: 0 auto;
+}

@@ -1,0 +1,259 @@
+/* src/pages/MainPage/MainPage.css */
+
+.main-page {
+  background-color: #fef7ff;
+  padding-top: 60px;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section {
+  background-color: #fef7ff;
+  height: calc(100vh - 60px);
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 60px;
+}
+
+.hero-left {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0; /* flexbox 오버플로우 방지 */
+}
+
+.hero-right {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tagline-card {
+  background-color: #ffffff;
+  border: 1px solid #939393;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  padding: 16px 24px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tagline-icon {
+  font-size: 22px;
+  margin-right: 14px;
+}
+
+.tagline-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.tagline-title {
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 22px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.tagline-subtitle {
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.hero-title {
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1.0;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 50px;
+  white-space: pre-line;
+}
+
+.hero-title-line2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-subtitle {
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 0;
+  line-height: 1.4;
+  max-width: 100%; /* 컨테이너 전체 너비 사용 */
+  width: 100%; /* 명시적 너비 설정 */
+  min-width: 0; /* flexbox 오버플로우 방지 */
+  word-wrap: break-word; /* 긴 단어 강제 줄바꿈 */
+  overflow-wrap: break-word; /* 최신 브라우저 지원 */
+}
+
+.hero-img {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.hero-button {
+  background-color: #ffc9c9;
+  border: none;
+  border-radius: 10px;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin: 0;
+  min-width: 120px;
+}
+
+.hero-button:hover {
+  background-color: #ffa5a5;
+}
+
+/* 반응형 처리 */
+@media (max-width: 1280px) {
+  .main-page {
+    padding-top: 50px;
+  }
+  
+  .hero-section {
+    height: calc(100vh - 50px);
+    padding-top: 20px;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 30px;
+    max-width: none;
+  }
+
+  .hero-left,
+  .hero-right {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .hero-left {
+    flex: none;
+  }
+
+  .hero-right {
+    flex: none;
+  }
+
+  .tagline-card {
+    width: 90%;
+    max-width: 450px;
+    margin-bottom: 20px;
+  }
+
+  .hero-img {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 45px;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 19px;
+    margin-bottom: 16px;
+  }
+
+  .hero-button {
+    font-size: 18px;
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-page {
+    padding-top: 40px;
+  }
+  
+  .hero-section {
+    height: calc(100vh - 40px);
+    padding-top: 15px;
+  }
+  
+  .hero-container {
+    padding: 0 15px;
+    gap: 25px;
+  }
+
+  .tagline-card {
+    width: 95%;
+    margin-bottom: 15px;
+  }
+
+  .hero-img {
+    width: 260px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fef7ff;
+  overflow: hidden;
+}

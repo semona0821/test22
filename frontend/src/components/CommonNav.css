@@ -1,0 +1,230 @@
+/* src/components/CommonNav.css */
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 1) .common-header: 헤더 전체 영역 */
+/* - background-color: 헤더 배경 (#fef7ff) */
+/* - position: fixed; top: 0; width: 100%; height: 130px (100px × 1.3) */
+/* - z-index: 999 */
+/* ───────────────────────────────────────────────────────────────────────── */
+.common-header {
+background-color: #fef7ff;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 130px; /* 100px × 1.3 = 130px */
+z-index: 999;
+box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 2) .common-nav: 내부 nav 바 */
+/* - max-width: 1920px; margin: 0 auto */
+/* - padding: 26px 52px (20px×1.3 = 26px, 40px×1.3 = 52px) */
+/* - display: flex; justify-content: space-between; align-items: center */
+/* - height: 100% */
+/* ───────────────────────────────────────────────────────────────────────── */
+.common-header .common-nav {
+max-width: 1920px;
+margin: 0 auto;
+padding: 26px 52px; /* 20px→26px, 40px→52px */
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100%;
+box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 3) .nav-left: 로고 + 텍스트 ("Topcit on the" / "HOSEO" 두 줄) */
+/* - display: flex; align-items: center; cursor: pointer */
+/* - .nav-logo { height: 84px (64px×1.3 ≈ 83.2 → 84px); margin-right: 16px (12px×1.3 ≈ 15.6 → 16px) } */
+/* - .logo-bold { font-size: 42px (32px×1.3 = 41.6 → 42px) } */
+/* - .logo-regular { font-size: 26px (20px×1.3 = 26px) } */
+/* ───────────────────────────────────────────────────────────────────────── */
+.common-nav .nav-left {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+.common-nav .nav-left .nav-logo {
+height: 84px; /* 64px × 1.3 ≈ 83.2 → 84px */
+width: auto;
+object-fit: contain;
+margin-right: 16px; /* 12px × 1.3 ≈ 15.6 → 16px */
+}
+
+.common-nav .nav-left .logo-bold {
+font-family: "Inter-SemiBold", Helvetica;
+font-size: 42px; /* 32px × 1.3 ≈ 41.6 → 42px */
+font-weight: 600;
+color: #ff3633;
+line-height: 1.2;
+margin: 0;
+}
+
+.common-nav .nav-left .logo-regular {
+font-family: "Inter-SemiBold", Helvetica;
+font-size: 26px; /* 20px × 1.3 = 26px */
+font-weight: 600;
+color: #000000;
+line-height: 1.2;
+margin: 0;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 4) .nav-center: 메뉴 3개 + LOGIN/LOGOUT 버튼 묶음 */
+/* - display: flex; align-items: center; gap: 78px (60px×1.3 = 78px) */
+/* - position: relative */
+/* → .divider 너비를 이 영역만큼 제한 */
+/* ───────────────────────────────────────────────────────────────────────── */
+.nav-center {
+display: flex;
+align-items: center;
+gap: 78px; /* 60px × 1.3 = 78px */
+position: relative;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 4-1) 메뉴 텍스트 공통 스타일 */
+/* - font-size: 31px (24px×1.3 = 28.8 → 31px) */
+/* - padding: 10px 0 (8px×1.3 ≈ 10px) */
+/* - font-family, color, cursor 등 유지 */
+/* ───────────────────────────────────────────────────────────────────────── */
+.nav-center a,
+.nav-center .active {
+position: relative;
+text-decoration: none;
+font-family: "Inter-Regular", Helvetica;
+font-size: 31px; /* 24px × 1.3 ≈ 28.8 → 31px */
+font-weight: 400;
+color: #000000;
+padding: 10px 0; /* 8px × 1.3 ≈ 10px */
+transition: color 0.2s ease-in-out;
+cursor: pointer;
+}
+
+.nav-center a:hover,
+.nav-center .active:hover {
+color: #555555;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 4-2) 활성 메뉴(.active) 밑줄 표시 - 수정된 부분 */
+/* - bottom: 0px (회색 보조선과 동일 선상으로 조정) */
+/* - height: 3px (2px×1.3 = 2.6 → 3px) */
+/* ───────────────────────────────────────────────────────────────────────── */
+.nav-center .active::after {
+content: "";
+position: absolute;
+bottom: 0px; /* -10px에서 0px로 변경하여 회색 보조선과 동일 선상에 위치 */
+left: 0;
+width: 100%;
+height: 3px; /* 2px × 1.3 ≈ 2.6 → 3px */
+background-color: #000000;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 4-3) 드롭다운(서브메뉴) */
+/* - .dropdown-parent:hover .dropdown { display: block; background-color & border-radius 추가 } */
+/* - .dropdown li a { font-size: 26px (20px×1.3 = 26px), padding: 10px 26px } */
+/* - top:100% 기준으로 링크의 "패딩만큼"만큼 올려 붙이기 (margin-top:-10px) */
+/* - 수평 중앙 정렬을 위해 left:50%; transform:translateX(-50%) 사용 */
+/* ───────────────────────────────────────────────────────────────────────── */
+.dropdown-parent {
+position: relative;
+}
+
+.dropdown-parent .dropdown {
+display: none;
+position: absolute;
+top: 100%; /* 링크 박스 바로 아래 */
+left: 50%; /* 부모 기준 수평 중앙 */
+transform: translateX(-50%); /* 정확히 가운데로 */
+margin-top: 10px; /* 링크 padding-top:10px만큼 보정 */
+list-style: none;
+background-color: #ffffff; /* 기본 흰색 */
+border: 1px solid #d1d1d1;
+border-radius: 4px;
+padding: 10px 0; /* 상하 여백 */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+z-index: 20;
+}
+
+/* 추가: RANKING 메뉴에 hover 시 dropdown 전체 배경을 핑크로 변경 */
+.dropdown-parent:hover .dropdown {
+display: block;
+background-color: #ffc9c9; /* 핑크색 배경 */
+border-radius: 8px; /* 둥근 테두리 */
+padding: 8px 0; /* 위/아래 여백 조정 */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-parent .dropdown li {
+padding: 10px 26px; /* 8px×1.3 ≈ 10px 상하, 20px×1.3 = 26px 좌우 */
+}
+
+/* 추가: 서브메뉴 항목 텍스트를 블록으로 만들어 전체 영역 클릭 가능 */
+.dropdown-parent .dropdown li a {
+display: block;
+padding: 8px 20px; /* 항목 내 여백 */
+text-decoration: none;
+font-family: "Inter-Regular", Helvetica;
+font-size: 26px; /* 20px × 1.3 = 26px */
+color: #000000;
+transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* 추가: 서브메뉴 각 항목에 hover 시 배경을 좀 더 진한 핑크로 변경, 텍스트 흰색으로 변경 */
+.dropdown-parent .dropdown li a:hover {
+background-color: #ffa5a5; /* 진한 핑크 */
+color: #ffffff; /* 글씨를 흰색으로 */
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 5) .nav-login-btn: LOGIN / LOGOUT 버튼 */
+/* - display: flex; align-items: center; gap: 10px (8px×1.3 ≈ 10px) */
+/* - font-size: 31px (24px×1.3 ≈ 28.8 → 31px) */
+/* - padding: 10px 0 (8px×1.3 ≈ 10px) */
+/* ───────────────────────────────────────────────────────────────────────── */
+.nav-login-btn {
+display: flex;
+align-items: center;
+gap: 10px; /* 8px × 1.3 ≈ 10px */
+background: none;
+border: none;
+font-family: "Inter-Regular", Helvetica;
+font-size: 31px; /* 24px × 1.3 ≈ 28.8 → 31px */
+color: #000000;
+cursor: pointer;
+padding: 10px 0; /* 8px × 1.3 ≈ 10px */
+transition: color 0.2s ease-in-out;
+}
+
+.nav-login-btn:hover {
+color: #555555;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 5-1) 로그인/로그아웃 아이콘 이미지(.auth-icon) */
+/* - width: 31px (24px×1.3 = 31.2 → 31px), height: 31px */
+/* ───────────────────────────────────────────────────────────────────────── */
+.auth-icon {
+width: 31px; /* 24px × 1.3 ≈ 31.2 → 31px */
+height: 31px; /* 24px × 1.3 ≈ 31.2 → 31px */
+object-fit: contain;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 6) .divider: 메뉴 그룹 바로 아래 회색 구분선 */
+/* - height: 1px (유지) */
+/* ───────────────────────────────────────────────────────────────────────── */
+.divider {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px; /* 고정 1px */
+background-color: #d1d1d1;
+}

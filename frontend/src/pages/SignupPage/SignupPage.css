@@ -1,0 +1,227 @@
+/* src/pages/SignupPage/SignupPage.css */
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 1) 전체 래퍼 (로그인 페이지와 동일)                                */
+/* ───────────────────────────────────────────────────────────────── */
+.signup-page-wrapper {
+  min-height: 100vh;
+  background-color: #fef7ff;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 2) 회원가입 카드(.signup-card)                                     */
+/* ───────────────────────────────────────────────────────────────── */
+.signup-card {
+  background-color: #fff6fc;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 32px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 3) 제목(.signup-title)                                              */
+/* ───────────────────────────────────────────────────────────────── */
+.signup-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 4) 회원가입 폼(.form-signup)                                       */
+/* ───────────────────────────────────────────────────────────────── */
+.form-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 5) 입력 그룹(.input-group)                                         */
+/*    - position: relative (버튼 절대 위치 배치용)                    */
+/*    - width: 100%; max-width: 600px                                */
+/*    - margin-bottom: 16px                                           */
+/* ───────────────────────────────────────────────────────────────── */
+.input-group {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 16px;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 6) 닉네임 입력창(.input-nickname)                                 */
+/*    - padding-right: 140px (버튼이 겹칠 공간 확보)                  */
+/*    - height: 48px; padding: 0 12px; font-size: 16px                 */
+/*    - border: 1px solid #ccc; border-radius: 4px                     */
+/*    - box-sizing: border-box                                         */
+/* ───────────────────────────────────────────────────────────────── */
+.input-group .input-nickname {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* 오른쪽에 “중복 확인” 버튼이 겹칠 공간을 좀 더 넉넉히 확보합니다 */
+  padding-right: 140px;
+  box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 7) 일반 입력창 스타일 (학번, 비밀번호 등)                          */
+/*    - 닉네임 필드 제외(input-nickname)                               */
+/*    - height: 48px; padding: 0 12px; font-size: 16px                 */
+/*    - border: 1px solid #ccc; border-radius: 4px                     */
+/*    - box-sizing: border-box                                         */
+/* ───────────────────────────────────────────────────────────────── */
+.input-group input:not(.input-nickname) {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 8) 닉네임 중복 확인 버튼(.btn-dupcheck)                              */
+/*    - position: absolute; top: 50%; right: 8px;                       */
+/*    - transform: translateY(-50%);                                     */
+/*    - background: #ffc6d0; hover #ffb0c0                               */
+/*    - border: none; border-radius: 4px; padding: 6px 12px;              */
+/*    - font-size: 0.9rem; cursor: pointer; z-index: 1                    */
+/*    - color: #333                                                     */
+/* ───────────────────────────────────────────────────────────────── */
+.btn-dupcheck {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  background: #ffc6d0;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background 0.2s;
+  z-index: 1; /* 입력창(input) 위에 떠 있도록 z-index 부여 */
+}
+
+.btn-dupcheck:hover {
+  background: #ffb0c0;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 9) 비밀번호 확인 아이콘(.check-icon)                                 */
+/*    - 로그인 페이지와 동일한 스타일                                   */
+/*    - position: absolute; top: 50%; right: 12px;                       */
+/*    - font-size: 1.2rem;                                               */
+/* ───────────────────────────────────────────────────────────────── */
+.check-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.check-icon.match {
+  color: green;
+}
+
+.check-icon.nomatch {
+  color: red;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 10) 가입하기 버튼(.btn-signup)                                       */
+/*     - width: 100%; padding: 12px; font-size: 16px                    */
+/*     - background-color: #ffadc2; hover #ffb0c0                        */
+/*     - color: #000; border: none; border-radius: 4px                   */
+/*     - cursor: pointer                                                 */
+/* ───────────────────────────────────────────────────────────────── */
+.btn-signup {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #ffadc2;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: #ffb0c0;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 11) footer 로고(.signup-footer)                                     */
+/*     - 로그인 페이지(.login-footer)와 동일한 스타일                   */
+/*     - margin-top: 32px; display: flex; justify-content: flex-end      */
+/*     - .footer-logo { width: 100px; opacity: 0.5 }                     */
+/* ───────────────────────────────────────────────────────────────── */
+.signup-footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-logo {
+  width: 100px;
+  opacity: 0.5;
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* 12) 반응형 (화면 너비 600px 이하)                                   */
+/*     - 카드 안쪽 padding 축소, 입력창 높이·폰트·버튼 축소              */
+/* ───────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 32px 16px;
+  }
+
+  .signup-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  /* 닉네임 입력창 높이 축소 */
+  .form-signup .input-nickname {
+    height: 44px;
+    font-size: 0.95rem;
+    padding-right: 120px;
+  }
+
+  /* 일반 입력창 높이 축소 */
+  .form-signup input:not(.input-nickname) {
+    height: 44px;
+    font-size: 0.95rem;
+  }
+
+  .btn-dupcheck {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .btn-signup {
+    padding: 10px 32px;
+    font-size: 0.95rem;
+  }
+}

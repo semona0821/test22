@@ -1,0 +1,109 @@
+.mypage-wrapper {
+  background-color: #fef7ff;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.mypage-container {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 8px solid #cac4d0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+.mypage-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.mypage-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 150px;
+  margin-top: 30px;
+  flex-wrap: nowrap;  /* 줄바꿈 방지 */
+}
+
+/* 배너 + 닉네임 변경 */
+.banner-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+.tier-banner-img {
+  width: 200px;
+  border-radius: 4px;
+}
+
+.btn-edit-inline,
+.btn-save {
+  margin-top: 16px;
+  background: #ffc6d0;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nick-edit-inline {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.nick-input {
+  flex: 1 1 140px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.nick-message {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #e63946;
+  text-align: center;
+}
+
+/* 점수 리스트 */
+.score-section {
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  min-width: 450px;
+}
+
+.score-section li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.score-section li span {
+  font-weight: bold;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .mypage-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .score-section li {
+    width: 100%;
+    max-width: 300px;
+  }
+}

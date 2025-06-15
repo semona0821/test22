@@ -1,0 +1,44 @@
+.sm-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.sm-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.sm-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+.sm-close {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer;
+}
+.sm-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.sm-item {
+  display: flex; align-items: center;
+  padding: 12px;
+  background: #f5f0fa;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.sm-item:hover {
+  background: #e8e0f7;
+}
+.sm-checkbox {
+  width: 20px; height: 20px;
+  border: 1px solid #333;
+  background: #fff;
+  margin-right: 8px;
+}
